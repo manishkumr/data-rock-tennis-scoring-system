@@ -27,11 +27,11 @@ tennis_project/
 
 1. Clone the repository:
     ```sh
-    git clone <repository_url>
-    cd tennis_project
+    git clone https://github.com/manishkumr/data-rock-tennis-scoring-system.git
+
+    cd data-rock-tennis-scoring-system/
     ```
 
-2. Install the required dependencies (if any).
 
 ## Usage
 
@@ -46,7 +46,7 @@ python main.py
 To run the unit tests, execute the following command:
 
 ```sh
-python -m unittest test_match.py
+python -m unittest tests
 ```
 
 ## Modules
