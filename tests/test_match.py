@@ -8,6 +8,10 @@ from src.match import Match
 
 
 class TestMatch(unittest.TestCase):
+
+    """
+    Test cases for the `Match` class.
+    """
     def setUp(self):
         self.match = Match("player1", "player2")
 

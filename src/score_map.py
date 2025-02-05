@@ -1,5 +1,6 @@
 """
-This module contains the `score_map` dictionary which maps integer scores to their corresponding string representations in a tennis game.
+This module contains the `score_map` dictionary which maps integer scores to their
+corresponding string representations in a tennis game.
 """
 
 score_map = {

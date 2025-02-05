@@ -4,17 +4,14 @@ This module contains the `Match` class which represents a tennis match.
 
 from src.game import Game
 from src.score_map import score_map
+from src.tennis_entity import TennisEntity
 
 
-class Match:
+class Match(TennisEntity):
     """
     Represents a tennis match between two players.
 
     Attributes:
-        player1 (str): Name of the first player.
-        player2 (str): Name of the second player.
-        score1 (int): Score of the first player.
-        score2 (int): Score of the second player.
         winner (str): Winner of the match.
         current_set (int): Current set number.
         sets (list): List of sets in the match.
@@ -29,10 +26,7 @@ class Match:
             player1 (str): Name of the first player.
             player2 (str): Name of the second player.
         """
-        self.player1 = player1
-        self.player2 = player2
-        self.score1 = 0
-        self.score2 = 0
+        super().__init__(player1, player2)
         self.winner = None
         self.current_set = 1
         self.sets = []
@@ -52,13 +46,15 @@ class Match:
         else:
             self.current_game.score2 += 1
 
-        if self.current_game.score1 >= 4 and self.current_game.score1 - self.current_game.score2 >= 2:
+        if (self.current_game.score1 >= 4 and
+                self.current_game.score1 - self.current_game.score2 >= 2):
             # Player1 wins the game
             self.current_game.winner = self.player1
             self.score1 += 1
             # self.current_game = Game(self.player1, self.player2)
             # self.games.append(self.current_game)
-        elif self.current_game.score2 >= 4 and self.current_game.score2 - self.current_game.score1 >= 2:
+        elif (self.current_game.score2 >= 4 and
+              self.current_game.score2 - self.current_game.score1 >= 2):
             # Player2 wins the game
             self.current_game.winner = self.player2
             self.score2 += 1
@@ -73,15 +69,16 @@ class Match:
 
         if self.current_game.winner is not None:
             return f"{self.score1}-{self.score2}"
-        elif self.current_game.score1 == 3 and self.current_game.score2 == 3:
+        if self.current_game.score1 == 3 and self.current_game.score2 == 3:
             # Deuce
             return f"{self.score1}-{self.score2}, Deuce"
-        elif self.current_game.score1 == 4 and self.current_game.score2 == 3:
+        if self.current_game.score1 == 4 and self.current_game.score2 == 3:
             # Advantage player1
             return f"{self.score1}-{self.score2}, Advantage {self.player1}"
-        elif self.current_game.score1 == 3 and self.current_game.score2 == 4:
+        if self.current_game.score1 == 3 and self.current_game.score2 == 4:
             # Advantage player2
             return f"{self.score1}-{self.score2}, Advantage {self.player2}"
-        else:
-            return (f"{self.score1}-{self.score2}, "
-                    f"{score_map.get(self.current_game.score1)}-{score_map.get(self.current_game.score2)}")
+
+        return (f"{self.score1}-{self.score2}, "
+                f"{score_map.get(self.current_game.score1)}-"
+                f"{score_map.get(self.current_game.score2)}")

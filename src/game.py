@@ -1,15 +1,14 @@
 """
 This module contains the `Game` class which represents a tennis game.
 """
-class Game:
+from src.tennis_entity import TennisEntity
+
+
+class Game(TennisEntity):
     """
     Represents a tennis game between two players.
 
     Attributes:
-        player1 (str): Name of the first player.
-        player2 (str): Name of the second player.
-        score1 (int): Score of the first player.
-        score2 (int): Score of the second player.
         winner (str): Winner of the game.
         current_point (int): Current point number.
         points (list): List of points in the game.
@@ -22,10 +21,7 @@ class Game:
             player1 (str): Name of the first player.
             player2 (str): Name of the second player.
         """
-        self.player1 = player1
-        self.player2 = player2
-        self.score1 = 0
-        self.score2 = 0
+        super().__init__(player1, player2)
         self.winner = None
         self.current_point = 1
         self.points = []

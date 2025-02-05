@@ -1,4 +1,6 @@
-
+"""
+    This is the main file to run the tennis match scoring system.
+"""
 from src.match import Match
 
 if __name__ == '__main__':
@@ -20,5 +22,3 @@ if __name__ == '__main__':
 
     match.point_won_by("player1")
     print(match.score())
-
-
