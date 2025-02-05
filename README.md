@@ -12,6 +12,7 @@ data-rock-tennis-scoring-system/
 |   └──  game.py
 |   └──  match.py
 |   └──  score_map.py
+|   └──  tennis_entity.py
 ├──  tests/
 |   └── test_match.py
 ├── README.md
