@@ -48,7 +48,7 @@ python main.py
 To run the unit tests, execute the following command:
 
 ```sh
-python -m unittest tests
+python -m unittest tests.test_match
 ```
 
 ## Modules
