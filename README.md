@@ -7,13 +7,15 @@ This project is a Python-based tennis match scoring system. It simulates a tenni
 ## Project Structure
 
 ```
-tennis_project/
+data-rock-tennis-scoring-system/
+|── src/
+|   └──  game.py
+|   └──  match.py
+|   └──  score_map.py
+├──  tests/
+|   └── test_match.py
+├── README.md
 ├── main.py
-├── match.py
-├── game.py
-├── score_map.py
-├── test_match.py
-└── __init__.py
 ```
 
 - **`main.py`**: Entry point of the application. It initializes a `Match` object and simulates a series of points won by players.
